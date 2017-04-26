@@ -1,16 +1,13 @@
 function rentalCarCost(days) {
-  var TotalAmount;
+  var TotalAmount,Discount=0,Rate = days*40;
   if ( days>=7)
     {
-    TotalAmount =((days*40)-50);
+    Discount =50;
     }
   else if (days >=3)
     {
-    TotalAmount =((days*40)-20);
+    Discount =20;
     }
-  else
-    {
-    TotalAmount =((days*40));
-    }
+    TotalAmount = Rate- Discount;
   return TotalAmount ;
 }
