@@ -1,10 +1,10 @@
 function getMiddle(Word) {
     var length = Word.length,
-        output, a = length / 2;
+        output, midLength = length / 2;
     if (length % 2 == 0) {
-        output = Word.substring(a - 1, a + 1);
+        output = Word.substring(midLength - 1, midLength + 1);
     } else {
-        output = Word.charAt(a);
+        output = Word.charAt(midLength);
     }
     return output;
 }
