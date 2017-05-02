@@ -1,14 +1,11 @@
-function getMiddle(Word)
-{
-  var length = Word.length,output;
+function getMiddle(Word) {
+    var length = Word.length,
+        output, a = length / 2;
 
-  if(length % 2 == 0)
-    {
-    output = Word.slice((length/2)-1,(length/2)+1);
+    if (length % 2 == 0) {
+        output = Word.substring(a - 1, a + 1);
+    } else {
+        output = Word.charAt(a);
     }
-  else
-    {
-      output = Word.charAt((length/2));
-    }
-return output ;
+    return output;
 }
