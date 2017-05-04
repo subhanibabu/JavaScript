@@ -1,10 +1,10 @@
 function rentalCarCost(days) {
-    var Rate = days * 40.Discount;
+    var rate = days * 40,disCount;
     if (days >= 7)
-        Discount = 50;
+        disCount = 50;
     else if (days >= 3)
-        Discount = 20;
+        disCount = 20;
     else
-        Discount = 0;
-    return Rate - Discount;
+        disCount = 0;
+    return rate - disCount;
 }
