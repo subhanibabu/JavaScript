@@ -1,5 +1,5 @@
 function rentalCarCost(days) {
-    var Rate = days * 40;
+    var Rate = days * 40.Discount;
     if (days >= 7)
         Discount = 50;
     else if (days >= 3)
