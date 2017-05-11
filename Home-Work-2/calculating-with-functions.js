@@ -1,41 +1,45 @@
 function zero(operator) {
-    return operator ? operator(0) : 0;
+    return number(operator, 0);
 }
 
 function one(operator) {
-    return operator ? operator(1) : 1;
+    return number(operator, 1);
 }
 
 function two(operator) {
-    return operator ? operator(2) : 2;
+    return number(operator, 2);
 }
 
 function three(operator) {
-    return operator ? operator(3) : 3;
+    return number(operator, 3);
 }
 
 function four(operator) {
-    return operator ? operator(4) : 4;
+    return number(operator, 4);
 }
 
 function five(operator) {
-    return operator ? operator(5) : 5;
+    return number(operator, 5);
 }
 
 function six(operator) {
-    return operator ? operator(6) : 6;
+    return number(operator, 6);
 }
 
 function seven(operator) {
-    return operator ? operator(7) : 7;
+    return number(operator, 7);
 }
 
 function eight(operator) {
-    return operator ? operator(8) : 8;
+    return number(operator, 8);
 }
 
 function nine(operator) {
-    return operator ? operator(9) : 9;
+    return number(operator, 9);
+}
+
+function number(operator, value) {
+    return operator ? operator(value) : value;
 }
 
 function plus(num1) {
