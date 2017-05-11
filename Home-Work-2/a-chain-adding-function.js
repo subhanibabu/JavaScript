@@ -1,12 +1,12 @@
 function add(a) {
     var currentSum = a;
 
-    function f(b) {
+    function chain(b) {
         currentSum += b;
-        return f;
+        return chain;
     }
-    f.toString = function() {
+    chain.toString = function() {
         return currentSum;
     }
-    return f;
+    return chain;
 }
