@@ -1,22 +1,20 @@
 Array.prototype.square = function() {
     return this.map(function(e) {
-        return e * e
+        return Math.pow(e, 2)
     })
 };
 Array.prototype.cube = function() {
     return this.map(function(e) {
-        return e * e * e
+        return Math.pow(e, 3)
     })
 };
 Array.prototype.sum = function() {
     return this.reduce(function(a, b) {
         return a + b
-    })
+    }, 0)
 };
 Array.prototype.average = function() {
-    return (this.reduce(function(a, b) {
-        return a + b
-    }, 0) / this.length)
+    return this.sum() / this.length;
 };
 Array.prototype.even = function() {
     return this.filter(function(e) {
