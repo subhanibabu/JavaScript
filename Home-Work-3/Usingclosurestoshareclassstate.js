@@ -1,30 +1,31 @@
-var sum = 0,
-    count = [];
+var sum = 0, count=[];
+ function Cat(name, weight1) { 
 
-function Cat(name, weight) {
+if (typeof name == 'undefined' || typeof weight1 == 'undefined') {
+         throw new Error('Cats not instantiated with name, weight: ' + name + ', ' + weight);
+     }     
+  this.name = name;
+  this._weight = weight1;
+  sum += this._weight;
+  count.push(this);
+ };
 
-    if (typeof name == 'undefined' || typeof weight == 'undefined') {
-        throw new Error('Cats not instantiated with name, weight: ' + name + ', ' + weight);
-    }
-    this.name = name;
-    this.weight = weight;
-    sum += this.weight;
-    count.push(this);
-};
+Object.defineProperty(Cat.prototype, "weight", {
+     get: function () {     
+         return this._weight;
+     },
+     set: function (wight) {
+         this._weight = wight;
+         sum += this._weight;         
+         },
+        
+ });
 
-Object.defineProperty(Cat, "sum", {
-    get: function() {
-        return sum;
-    },
-    set: function() {
-        sum = sum + cat.weight;
-    }
-});
-
-Object.defineProperty(Cat, "averageWeight", {
-    get: function() {
-        return function() {
-            return count ? sum / count.length : 0;
-        };
-    }
-});
+ Object.defineProperty(Cat, "averageWeight", {
+     get: function () {
+         return function () {
+         console.log(count);
+             return count ? sum / count.length : 0;
+         };
+     }
+ });
