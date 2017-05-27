@@ -1,50 +1,36 @@
-angular.module('catClick', [])
-    .controller('catCickController', function($scope) {
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+<script src="C:\Users\subhani_anchula\Desktop\JavaScript\HM4\catController.js"></script>
+<link rel="stylesheet" href="C:\Users\subhani_anchula\Desktop\JavaScript\HM4\bootstrap.css">
 
-        var vm = this;
-        vm.count = 0;
-        vm.clickCount1 = 0;
-        vm.clickCount2 = 0;
-        vm.selectedCatClicks = 0;
-        vm.totalclicks = 0;
+<body ng-app="catClick" ng-controller="catCickController as vm">
+    <h1>Step1 - CatClicker</h1>
+    <div>
+        <img ng-src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/140.jpg" ng-click="vm.myFunc()">
+        <p>The Cat has been clicked {{vm.count}} times.</p>
+    </div>
+    <h1>Step2 - CatClicker</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <span>Cat1</span><img ng-src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/138.jpg" ng-click="vm.catmyFunc1()"> cat1:{{vm.clickCount1}}
+        </div>
+        <div class="col-md-6">
+            <span>Cat2</span><img ng-src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/286.jpg" ng-click="vm.catmyFunc2()"> cat2:{{vm.clickCount2}}
+        </div>
+    </div>
+    <h1>Step3 - CatClicker</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <select ng-model="selectedName" ng-click="vm.selectedCat(selectedName);" ng-options="x.name for x in vm.cats"></select>
+        </div>
+        <div class="col-md-6">
+            <img ng-src="{{selectedName.url}}" ng-click="vm.selecteCatClick()">
+            <div>
+                Name :{{selectedName.name}} Selected Cat clicks:{{vm.selectedCatClicks}} Total Clicks:{{vm.totalclicks}}
+            </div>
+        </div>
+    </div>
+</body>
 
-        vm.myFunc = function() {
-            vm.count++;
-        };
-
-        vm.catmyFunc1 = function() {
-            vm.clickCount1++;
-        };
-
-        vm.catmyFunc2 = function() {
-            vm.clickCount2++;
-        };
-        vm.cats = [{
-            name: 'Abyssinian',
-            url: 'http://lh3.ggpht.com/nlI91wYNCrjjNy5f-S3CmVehIBM4cprx-JFWOztLk7vFlhYuFR6YnxcT446AvxYg4Ab7M1Fy0twaOCWYcUk=s0#w=640&amp;h=426'
-
-        }, {
-            name: 'American Curl',
-            url: 'http://lh5.ggpht.com/LfjkdmOKkGLvCt-VuRlWGjAjXqTBrPjRsokTNKBtCh8IFPRetGaXIpTQGE2e7ZCUaG2azKNkz38KkbM_emA=s0#w=640&h=454',
-
-        }, {
-            name: 'American Shorthair',
-            url: 'http://www.businessinsider.com/image/4f3433986bb3f7b67a00003c/cute-cat.jpg'
-
-        }, {
-            name: 'Asian',
-            url: 'http://lh3.ggpht.com/nlI91wYNCrjjNy5f-S3CmVehIBM4cprx-JFWOztLk7vFlhYuFR6YnxcT446AvxYg4Ab7M1Fy0twaOCWYcUk=s0#w=640&amp;h=426',
-
-        }, {
-            name: 'Asian Semi-longhair',
-            url: 'http://lh3.ggpht.com/kixazxoJ2ufl3ACj2I85Xsy-Rfog97BM75ZiLaX02KgeYramAEqlEHqPC3rKqdQj4C1VFnXXryadFs1J9A=s0#w=640&h=496'
-
-        }];
-        vm.selecteCatClick = function() {
-            vm.selectedCatClicks++;
-            vm.totalclicks++;
-        }
-        vm.selectedCat = function() {
-            vm.selectedCatClicks = 0;
-        }
-    });
+</html>
