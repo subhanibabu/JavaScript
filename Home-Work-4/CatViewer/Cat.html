@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
-<script src="C:\Users\subhani_anchula\Desktop\JavaScript\HM4\CatViewer\catController.js"></script>
-<script src="C:\Users\subhani_anchula\Desktop\JavaScript\HM4\CatViewer\catService.js"></script>
-<link rel="stylesheet" href="C:\Users\subhani_anchula\Desktop\JavaScript\HM4\CatViewer\bootstrap.css">
+<script src="./catController.js"></script>
+<script src="./catService.js"></script>
+<link rel="stylesheet" href="./bootstrap.css">
 <link data-require="fontawesome@*" data-semver="4.1.0" rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
 
 <body ng-app="catViewer" ng-controller="catCickController as vm">
@@ -82,8 +82,6 @@
         <button ng-disabled="addCatForm.$invalid" ng-click="vm.addCat()" type="button" class="btn btn-success">Save</button>
         <button ng-click="vm.resetAll()" type="button" class="btn btn-default">cancel</button>
     </fieldset>
-
 </form>
 </body>
-
 </html>
